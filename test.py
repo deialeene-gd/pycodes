@@ -176,28 +176,28 @@ while True:
 #     print()
 
 
-# for i in range(3):
-#     for o in range(5):
-#         if o % 2 == 0:
-#             print("*", end = " ")
-#         else:
-#             print("0", end=" ")
-#     print()
+for i in range(10):
+    for o in range(10):
+        if i % 2 == 0:
+            print("*", end = " ")
+        else:
+            print("0", end=" ")
+    print()
 
 
 
-mylist=["honda", "toyota", "nissan", "mitsubishi"]
+# mylist=["honda", "toyota", "nissan", "mitsubishi"]
 
-print(mylist[2])
+# print(mylist[2])
 
-print(mylist[-1])
+# print(mylist[-1])
 
-print(mylist[1:3])
+# print(mylist[1:3])
 
-print(mylist[-3:-1])
+# print(mylist[-3:-1])
 
-print(mylist[:3:2])
+# print(mylist[:3:2])
 
-print(mylist[::2])
+# print(mylist[::2])
 
-print(mylist[::-1])
+# print(mylist[::-1])
