@@ -4,7 +4,7 @@ while True:
     srch = int(input("Enter search number: "))
 
     if row <= 0 or col <= 0:
-        print("Exiting... Both numbers must be greater than 0.")
+        print("Both numbers must be greater than 0. Exiting... ")
         break
 
     for i in range(1, row + 1):
