@@ -1,6 +1,6 @@
 while True:
-    row = int(input("Enter first number: "))
-    col = int(input("Enter second number: "))
+    row = int(input("Enter row: "))
+    col = int(input("Enter column: "))
     srch = int(input("Enter search number: "))
 
     if row <= 0 or col <= 0:
