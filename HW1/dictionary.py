@@ -12,66 +12,63 @@ while True:
 
     sorry = "I'm sorry, not in the cart."
 
-    match action:
+    if action == "a":
+        key = input("Enter key: ")
+        value = input("Enter value: ")
+        if key.isdigit():
+            cart[int(key)] = value
+            print("Item added.")
+        else:
+            print("Invalid key.")
 
-        case "a":
-            key = input("Enter key: ")
-            value = input("Enter value: ")
-            if key.isdigit():
-                cart[int(key)] = value
-                print("Item added.")
+    elif action == "c":
+        key = input("Enter key to search: ")
+        if key.isdigit():
+            keys = int(key)
+            if keys in cart:
+                new_value = input("Enter new value: ")
+                cart[keys] = new_value
+                print("Item updated.")
             else:
-                print("Invalid key.")
+                print(f"{sorry}")
+        else:
+            print("Invalid key.")
 
-        case "c":
-            key = input("Enter key to search: ")
-            if key.isdigit():
-                keys = int(key)
-                if keys in cart:
-                    new_value = input("Enter new value: ")
-                    cart[keys] = new_value
-                    print("Item updated.")
-                else:
-                    print(f"{sorry}")
+    elif action == "d":
+        print("Displaying value")
+        print("Key \t Value")
+        for key, value in cart.items():
+            print(f"{key} \t {value}")
+
+    elif action == "r":
+        key = input("Enter key to search:")
+        if key.isdigit():
+            keys = int(key)
+            if keys in cart:
+                value = cart[keys]
+                del cart[keys]
+                print(f"The key {keys} with value {value} has been deleted.")
+            else: 
+                print(f"{sorry}")
+        else:
+            print("Invalid key.")
+
+    elif action == "s":
+        srch = input("Enter key/item to search: ")
+        if srch in cart.values():
+            print(f"Found {srch} item.")
+        elif srch.isdigit():
+            if int(srch) in cart.keys():
+                print(f"Found key {srch}")
             else:
-                print("Invalid key.")
+                print(f"{sorry}")
+        else:
+            print("Invalid key.")
 
-        case "d":
-            print("Displaying value")
-            print("Key \t Value")
-            for key, value in cart.items():
-                print(f"{key} \t {value}")
+    elif action == "*":
+        print("Bye.")
+        break
 
-        case "r":
-            key = input("Enter key to search:")
-            if key.isdigit():
-                keys = int(key)
-                if keys in cart:
-                    value = cart[keys]
-                    del cart[keys]
-                    print(f"The key {keys} with value {value} has been deleted.")
-                else: 
-                    print(f"{sorry}")
-            else:
-                print("Invalid key.")
-            
-
-        case "s":
-            srch = input("Enter key/item to search: ")
-            if srch in cart.values():
-                print(f"Found {srch} item.")
-            elif srch.isdigit():
-                if int(srch) in cart.keys():
-                    print(f"Found key {srch}")
-                else:
-                    print(f"{sorry}")
-            else:
-                print("Invalid key.")
-
-        case "*":
-            print("Bye.")
-            break
-
-        case _:
-            print("Invalid action. Please choose A, C, D, R, or S.")
+    else:
+        print("Invalid action. Please choose A, C, D, R, or S.")
 
